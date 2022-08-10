@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?><MessageAssembly iib:parser="GENERICROOT" xmlns:iib="http://com.ibm.iib/lt/1.0">
    <version xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="INTEGER">1</version>
    <checkpoint>
-      <messageId xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">00008678-62F0E0DB-00000001</messageId>
+      <messageId xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">000070C8-62F3CB75-00000001</messageId>
       <propagationCount xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="INTEGER">1</propagationCount>
       <nodeCallDepth xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="INTEGER">2</nodeCallDepth>
-      <timestamp xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="TIMESTAMP">2022-08-08 10:09:31.473</timestamp>
+      <timestamp xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="TIMESTAMP">2022-08-10 15:15:01.460</timestamp>
       <source>
-         <name xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Compute</name>
-         <identifier xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck#FCMComposite_1_5</identifier>
+         <name xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Convert JSON to XML</name>
+         <identifier xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck#FCMComposite_1_7</identifier>
          <type xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">ComIbmComputeNode</type>
          <terminal xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">out</terminal>
          <nodePath>
             <application xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaAvailabilityChecker</application>
             <messageFlow xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck</messageFlow>
-            <node xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Compute</node>
+            <node xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Convert JSON to XML</node>
          </nodePath>
          <inputNode xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="BOOLEAN">FALSE</inputNode>
       </source>
       <target>
-         <name xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">HTTP Reply</name>
-         <identifier xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck#FCMComposite_1_2</identifier>
-         <type xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">ComIbmWSReplyNode</type>
+         <name xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Call Checker Backend</name>
+         <identifier xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck#FCMComposite_1_4</identifier>
+         <type xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">ComIbmWSRequestNode</type>
          <terminal xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">in</terminal>
          <nodePath>
             <application xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaAvailabilityChecker</application>
             <messageFlow xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck</messageFlow>
-            <node xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">HTTP Reply</node>
+            <node xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Call Checker Backend</node>
          </nodePath>
       </target>
    </checkpoint>
    <environment/>
-   <localEnvironment/>
+   <localEnvironment xmlns:iib="http://com.ibm.iib/lt/1.0" iib:parser="MQROOT">
+      <Destination>
+         <HTTP>
+            <RequestIdentifier iib:valueType="BLOB">455648540100000000000000d4c25288ec62000000000000</RequestIdentifier>
+         </HTTP>
+         <RouterList>
+            <DestinationData>
+               <labelName iib:valueType="CHARACTER">POST</labelName>
+            </DestinationData>
+         </RouterList>
+      </Destination>
+      <HTTP>
+         <Input>
+            <RequestLine>
+               <Method iib:valueType="CHARACTER">POST</Method>
+               <RequestURI iib:valueType="CHARACTER">/check</RequestURI>
+               <HTTPVersion iib:valueType="CHARACTER">HTTP/1.1</HTTPVersion>
+            </RequestLine>
+            <Path>
+               <Segment iib:valueType="CHARACTER">check</Segment>
+            </Path>
+         </Input>
+      </HTTP>
+   </localEnvironment>
    <exceptionList/>
    <message xmlns:iib="http://com.ibm.iib/lt/1.0" iib:parser="WSRoot">
       <Properties iib:parser="MQPROPERTYPARSER">
@@ -57,13 +80,10 @@
          <IdentityMappedPassword iib:elementType="0x03000000"/>
          <IdentityMappedIssuedBy iib:elementType="0x03000000"/>
       </Properties>
-      <JSON iib:parser="json">
-         <Data>
-            <Result>
-               <TeaType iib:valueType="CHARACTER">Earl Grey</TeaType>
-               <SKU iib:valueType="INTEGER">8</SKU>
-            </Result>
-         </Data>
-      </JSON>
+      <XMLNSC iib:parser="xmlnsc">
+         <TeaCheck>
+            <Search iib:valueType="CHARACTER">Earl Grey</Search>
+         </TeaCheck>
+      </XMLNSC>
    </message>
 </MessageAssembly>

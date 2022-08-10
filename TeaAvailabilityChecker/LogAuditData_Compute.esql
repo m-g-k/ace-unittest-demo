@@ -1,0 +1,17 @@
+
+
+CREATE COMPUTE MODULE LogAuditData_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		CALL CopyEntireMessage();
+		
+		LOG EVENT SEVERITY 1 MESSAGE 7513 VALUES( 'Found the following Tea SKUs:', InputRoot.JSON.Data.Result.SKU, InputRoot.JSON.Data.Result.TeaType);
+		
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

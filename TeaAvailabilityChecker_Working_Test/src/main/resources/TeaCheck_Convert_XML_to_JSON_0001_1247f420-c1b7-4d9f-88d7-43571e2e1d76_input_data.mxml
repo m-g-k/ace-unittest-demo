@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageAssembly iib:parser="GENERICROOT" xmlns:iib="http://com.ibm.iib/lt/1.0">
+   <version xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="INTEGER">1</version>
+   <checkpoint>
+      <messageId xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">000059F0-62F39113-00000001</messageId>
+      <propagationCount xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="INTEGER">2</propagationCount>
+      <nodeCallDepth xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="INTEGER">3</nodeCallDepth>
+      <timestamp xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="TIMESTAMP">2022-08-10 11:05:55.368999</timestamp>
+      <source>
+         <name xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Call Checker Backend</name>
+         <identifier xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck#FCMComposite_1_4</identifier>
+         <type xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">ComIbmWSRequestNode</type>
+         <terminal xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">out</terminal>
+         <nodePath>
+            <application xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaAvailabilityChecker</application>
+            <messageFlow xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck</messageFlow>
+            <node xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Call Checker Backend</node>
+         </nodePath>
+         <inputNode xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="BOOLEAN">FALSE</inputNode>
+      </source>
+      <target>
+         <name xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Convert XML to JSON</name>
+         <identifier xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck#FCMComposite_1_6</identifier>
+         <type xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">ComIbmComputeNode</type>
+         <terminal xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">in</terminal>
+         <nodePath>
+            <application xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaAvailabilityChecker</application>
+            <messageFlow xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">TeaCheck</messageFlow>
+            <node xmlns:iib="http://com.ibm.iib/lt/1.0" iib:valueType="CHARACTER">Convert XML to JSON</node>
+         </nodePath>
+      </target>
+   </checkpoint>
+   <environment/>
+   <localEnvironment xmlns:iib="http://com.ibm.iib/lt/1.0" iib:parser="MQROOT">
+      <Destination>
+         <HTTP>
+            <RequestIdentifier iib:valueType="BLOB">455648540000000007000000a9b36e872040000000000000</RequestIdentifier>
+         </HTTP>
+         <RouterList>
+            <DestinationData>
+               <labelName iib:valueType="CHARACTER">POST</labelName>
+            </DestinationData>
+         </RouterList>
+      </Destination>
+      <HTTP>
+         <Input>
+            <RequestLine>
+               <Method iib:valueType="CHARACTER">POST</Method>
+               <RequestURI iib:valueType="CHARACTER">/check</RequestURI>
+               <HTTPVersion iib:valueType="CHARACTER">HTTP/1.1</HTTPVersion>
+            </RequestLine>
+            <Path>
+               <Segment iib:valueType="CHARACTER">check</Segment>
+            </Path>
+         </Input>
+      </HTTP>
+      <WrittenDestination>
+         <HTTP>
+            <RequestURL iib:valueType="CHARACTER">http://localhost:7801/skuCheck</RequestURL>
+         </HTTP>
+      </WrittenDestination>
+   </localEnvironment>
+   <exceptionList/>
+   <message xmlns:iib="http://com.ibm.iib/lt/1.0" iib:parser="WSRoot">
+      <Properties iib:parser="WSPROPERTYPARSER">
+         <MessageSet iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <MessageType iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <MessageFormat iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <Encoding iib:valueType="INTEGER">546</Encoding>
+         <CodedCharSetId iib:valueType="INTEGER">1208</CodedCharSetId>
+         <Transactional iib:valueType="BOOLEAN">FALSE</Transactional>
+         <Persistence iib:valueType="BOOLEAN">FALSE</Persistence>
+         <CreationTime iib:valueType="GMTTIMESTAMP">2022-08-10 11:05:55.455002</CreationTime>
+         <ExpirationTime iib:valueType="INTEGER">-1</ExpirationTime>
+         <Priority iib:valueType="INTEGER">0</Priority>
+         <ReplyIdentifier iib:valueType="BLOB">000000000000000000000000000000000000000000000000</ReplyIdentifier>
+         <ReplyProtocol iib:valueType="CHARACTER">SOAP-HTTP</ReplyProtocol>
+         <Topic iib:elementType="0x03000000"/>
+         <ContentType iib:valueType="CHARACTER">text/xml;charset=utf-8</ContentType>
+         <IdentitySourceType iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentitySourceToken iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentitySourcePassword iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentitySourceIssuedBy iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedType iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedToken iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedPassword iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+         <IdentityMappedIssuedBy iib:elementType="0x03000000" iib:valueType="CHARACTER"/>
+      </Properties>
+      <HTTPResponseHeader iib:parser="WSRSPHDR">
+         <X-Original-HTTP-Status-Line iib:valueType="CHARACTER">HTTP/1.1 200 OK</X-Original-HTTP-Status-Line>
+         <X-Original-HTTP-Status-Code iib:valueType="INTEGER">200</X-Original-HTTP-Status-Code>
+         <Content-Type iib:valueType="CHARACTER">text/xml;charset=utf-8</Content-Type>
+         <Server iib:valueType="CHARACTER">IBM App Connect Enterprise</Server>
+         <Date iib:valueType="CHARACTER">Wed, 10 Aug 2022 11:05:55 GMT</Date>
+         <Content-Length iib:valueType="CHARACTER">57</Content-Length>
+      </HTTPResponseHeader>
+      <XMLNSC iib:parser="xmlnsc">
+         <Result>
+            <TeaType iib:valueType="CHARACTER">Earl Grey</TeaType>
+            <SKU iib:valueType="CHARACTER">1</SKU>
+         </Result>
+      </XMLNSC>
+   </message>
+</MessageAssembly>
