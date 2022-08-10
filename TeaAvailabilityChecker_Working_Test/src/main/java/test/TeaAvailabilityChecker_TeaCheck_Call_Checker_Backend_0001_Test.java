@@ -52,7 +52,7 @@ public class TeaAvailabilityChecker_TeaCheck_Call_Checker_Backend_0001_Test {
 		NodeSpy computeNodeSpy = new NodeSpy(nodeComputeReference);
 		
 		// Propagate a message from the Compute node into the HTTP Request node
-		messageAssemblyPath = "/TeaCheck_Convert_JSON_to_XML_output_data.mxml";
+		messageAssemblyPath = "/TeaCheck_Convert_JSON_To_XML_output_data.mxml";
 		TestMessageAssembly computeNodeOutputeMessageAssembly = createMessageAssembly(messageAssemblyPath);
 		computeNodeSpy.propagate(computeNodeOutputeMessageAssembly, "out");
 		

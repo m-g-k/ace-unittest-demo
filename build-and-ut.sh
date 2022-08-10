@@ -16,5 +16,8 @@ mqsicreateworkdir /tmp/ace-demo-ut-work-dir
 # ibmint for v12
 ibmint deploy --input-path . --output-work-directory /tmp/ace-demo-ut-work-dir --project TeaAvailabilityChecker --project TeaAvailabilityChecker_Working_Test
 
+# optimize the server
+ibmint optimize server --work-directory /tmp/ace-demo-ut-work-dir
+
 # Run the server to run the tests
 IntegrationServer -w /tmp/ace-demo-ut-work-dir --start-msgflows false --no-nodejs --admin-rest-api -1 --test-project TeaAvailabilityChecker_Working_Test
