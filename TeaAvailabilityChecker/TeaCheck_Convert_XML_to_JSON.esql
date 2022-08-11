@@ -4,7 +4,7 @@ CREATE COMPUTE MODULE TeaCheck_Convert_XML_to_JSON
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		
-		-- create OutputRoot.JSON.Data from the input
+		-- create OutputRoot.JSON.Data from the input.
 		SET OutputRoot.JSON.Data.Response.* = InputRoot.XMLNSC.*;
 		
 		RETURN TRUE;
