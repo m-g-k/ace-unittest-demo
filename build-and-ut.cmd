@@ -15,6 +15,5 @@ ibmint deploy --input-path . --output-work-directory %WORKDIR% --project TeaAvai
 REM optimize server
 ibmint optimize server --work-directory %WORKDIR%
 
-:: mqsisetdbparms -w %WORKDIR% -n TEADB -u hzp00167 -p eNDKMg9sr7H4ZSnt
 REM Run the server to run the tests
 IntegrationServer -w %WORKDIR% --start-msgflows false --no-nodejs --admin-rest-api -1 --test-project TeaAvailabilityChecker_Working_Test
