@@ -5,7 +5,7 @@ CREATE COMPUTE MODULE TeaCheck_Convert_XML_to_JSON
 	BEGIN
 		
 		-- create OutputRoot.JSON.Data from the input.
-		SET OutputRoot.JSON.Data.* = InputRoot.XMLNSC.*;
+		SET OutputRoot.JSON.Data.* = InputRoot.XMLNSC.BREAKME.*;
 		
 		RETURN TRUE;
 		 
